@@ -1,0 +1,27 @@
+{
+  "name": "wanchain-crosschain-tracer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.1",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "lodash": "^4.17.10",
+    "moment": "^2.22.2",
+    "mysql2": "^1.5.3",
+    "pug": "^2.0.3",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.0"
+  }
+}

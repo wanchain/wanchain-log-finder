@@ -1,0 +1,14 @@
+
+extends layout
+
+block content
+  #banner.page-header
+    .row
+      .col-md-6.col-sm-12
+        h1= title
+  .row
+    .col-md-12.col-sm-12
+      .row.list-group
+        each log in logs
+          .col-xs-12.list-group-item
+            p !{(JSON.stringify(log)).replace(/\n/g, '<br/>')}

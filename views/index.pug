@@ -1,0 +1,40 @@
+extends layout
+
+block content
+  //- h1= title
+  h2 Welcome to #{title}
+  .row
+    .col-xs-12.col-md-12
+      form.form-horizontal(action="/search", method="post", role="form")
+        - if (error == "val")
+          .alert.alert-danger(role="alert") All fields required, please try again
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="name") Host
+          .col-xs-12.col-sm-10
+            input#host.form-control(name="ip" placeholder="61.148.205.142")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="tag") TAG
+          .col-xs-12.col-sm-10
+            input#host.form-control(name="tag" placeholder="storeman")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="pid") PID
+          .col-xs-12.col-sm-10
+            input#host.form-control(name="pid" placeholder="66666")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="level") Level
+          .col-xs-12.col-sm-10
+            input#host.form-control(name="level" placeholder="debug")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="timeReported") TimeReported
+          .col-xs-12.col-sm-10
+            input#time.form-control(name="timeReported" placeholder="2018-07-05 08:08:08;20")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="receivedAt") ReceivedAt
+          .col-xs-12.col-sm-10
+            input#time.form-control(name="receivedAt" placeholder="2018-07-05 08:08:08;20")
+        .form-group
+          label.col-xs-10.col-sm-2.control-label(for="msg") Message
+          .col-xs-12.col-sm-10
+            input#key.form-control(name="msg" placeholder="key words of an message")
+        button.btn.btn-default.pull-right(type='submit') Search
+    //- .col-xs-12.col-md-4
