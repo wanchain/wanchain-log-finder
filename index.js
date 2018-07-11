@@ -1,4 +1,3 @@
-const http = require('http')
 const path = require('path')
 const logger = require('morgan')
 const express = require('express')
@@ -6,7 +5,6 @@ const bodyParser = require('body-parser')
 const chalk  = require('chalk')
 const log = console.log
 const app = express()
-const server = http.createServer(app)
 const API_PORT = process.env.API_PORT || 5000
 const db = require('./db')
 
@@ -27,7 +25,7 @@ app.use(function(req, res, next) {
 db.connection
 	.sync()
 	.then(() => {
-		server.listen(app.get('port'), () => {
+		app.listen(app.get('port'), () => {
 			log(chalk.yellow(`==> 🚧 app server listening on ${API_PORT}`))
 		})
 	}) 
