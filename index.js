@@ -1,3 +1,4 @@
+require('dotenv').load()
 const path = require('path')
 const logger = require('morgan')
 const express = require('express')
@@ -5,10 +6,10 @@ const bodyParser = require('body-parser')
 const chalk  = require('chalk')
 const log = console.log
 const app = express()
-const API_PORT = process.env.API_PORT || 5000
+const SERVER_PORT = process.env.SERVER_PORT || 3000
 const db = require('./db')
 
-app.set('port', API_PORT)
+app.set('port', SERVER_PORT)
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'pug')
 
@@ -26,7 +27,7 @@ db.connection
 	.sync()
 	.then(() => {
 		app.listen(app.get('port'), () => {
-			log(chalk.yellow(`==> 🚧 app server listening on ${API_PORT}`))
+			log(chalk.yellow(`==> 🚧 app server listening on ${SERVER_PORT}`))
 		})
 	}) 
 	.catch(err => {
