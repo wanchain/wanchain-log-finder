@@ -1,3 +1,5 @@
+'use strict'
+
 require('dotenv').load()
 const Sequelize = require('sequelize')
 const Event = require('./event')

@@ -1,3 +1,5 @@
+'use strict'
+
 module.exports = (connection, DataTypes) => {
 	const Event = connection.define('LogEvents', {
 		ID: {
