@@ -1,7 +1,7 @@
 'use strict'
 
 const moment = require('moment')
-const { Op } = require('Sequelize')
+const { Op } = require('sequelize')
 const db = require('../db')
 const {
 	Event
@@ -32,7 +32,10 @@ module.exports.loadLogEvents = (req, res) => {
 		timeReceivedPoint,
 		timeReceivedOffset,
 		timeReceivedFrom,
-		timeReceivedTo
+		timeReceivedTo,
+
+		isValidReportedTime,
+		isValidReceivedTime
 
 	timeReportedArgs = timeReported.trim().split(';')
 	timeReceivedArgs = receivedAt.trim().split(';')
